@@ -1,0 +1,43 @@
+{
+  "name": "resolutionswap",
+  "version": "2.0.0",
+  "description": "Resolution hotkey manager by adxm.o",
+  "author": "adxm.o",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "node scripts/gen-icon.js && npx vite build --config vite.config.js && npx electron .",
+    "dist": "node scripts/gen-icon.js && npx vite build --config vite.config.js && npx electron-builder --win"
+  },
+  "build": {
+    "appId": "com.adxmo.resolutionswap",
+    "productName": "ResolutionSwap",
+    "directories": { "output": "release" },
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "icon": "assets/icon.png",
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "ResolutionSwap",
+      "runAfterFinish": true
+    },
+    "files": [ "src/main/**/*", "dist-renderer/**/*", "assets/icon.png" ],
+    "asar": true
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "sharp": "^0.33.2",
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
