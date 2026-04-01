@@ -2,7 +2,14 @@
 
 Switch between display resolutions instantly with hotkeys. Built for competitive gamers who need stretched res, desktop users who swap between work and gaming setups, or anyone tired of digging through Windows display settings.
 
-Made by [adxm.o](https://github.com/adxm-o)
+## Common fixes
+
+NVIDIA GPU's:
+"Resolution not supported by display. Tried all methods including NVIDIA custom registration" - 
+Open NVIDIA Control Panel - Change resolution - Customize - Create custom resolution - Change horizontal and vertical pixels to your desired resolution and change Refresh rate to your desired frames too. - Click "Test" and then save. Adjust desktop size and position (found in the left tab of NVIDIA control panel) - Click Full Screen.
+
+Any other GPU's has not been tested yet and its functionality is yet to be discovered
+
 
 ## What it does
 
@@ -14,9 +21,6 @@ Made by [adxm.o](https://github.com/adxm-o)
 - Starts minimized to system tray on boot if you enable startup launch
 - For non-standard resolutions on NVIDIA GPUs, it tries to register them as custom resolutions automatically through NvAPI so you don't have to mess with NVIDIA Control Panel
 
-## Screenshots
-
-*coming soon*
 
 ## Download
 
